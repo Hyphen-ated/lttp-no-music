@@ -13,3 +13,8 @@ byte pattern search & replace operations:
 8e 2c 01 -> 9c 2c 01
 8d 32 01 -> 9c 32 01
 8e 32 01 -> 9c 32 01
+
+The instruction at 0488a0 triggers the music when you pick up a pendant/crystal.
+That music controls how long Link is frozen in place, so removing it saves time.
+This is bad when speedrunning the game, since ideally the music removal should not
+save any time. So this address is exempted from the search & replace operation above.
