@@ -1,7 +1,9 @@
 By Hyphen-ated
 version 0.1
 
-This is a patch to remove music from the 1.0 japanese version of Zelda LTTP.
+This is a patch to remove music from the 1.0 japanese version of Zelda LTTP. It works with the randomizer at http://vt.alttp.run/
+
+It's not currently suitable for use in races, because it saves several seconds on each crystal. (The length of the music is involved somehow with determining how long you're frozen holding the crystal.)
 
 How it was made:
 The addresses $0132 and $012C are involved with controlling the music.
