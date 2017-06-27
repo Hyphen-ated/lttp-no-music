@@ -1,20 +1,28 @@
 By Hyphen-ated
-version 0.1
+version 0.2
 
 This is a patch to remove music from the 1.0 japanese version of Zelda LTTP.
+It's compatible with the randomizer at http://vt.alttp.run/
 
-How it was made:
-The addresses $0132 and $012C are involved with controlling the music.
-Anywhere that the game was setting a value to one of those addresses,
-I changed it to set it to zero instead, by doing the following 
-byte pattern search & replace operations:
+How to use: get a randomized rom, then use the program "Lunar IPS" (or another
+IPS patcher of your choice) to apply this .ips file to the rom. Then when you
+play the rom, it will have no music.
 
-8d 2c 01 -> 9c 2c 01
-8e 2c 01 -> 9c 2c 01
-8d 32 01 -> 9c 32 01
-8e 32 01 -> 9c 32 01
+It works by editing the song data files that are interpreted by the SPC700
+sound coprocessor. Wherever there is a "volume" (ED byte) or "volume ramp" (EE
+byte) instruction, it changes it to set the volume to zero.
 
-The instruction at 0488a0 triggers the music when you pick up a pendant/crystal.
-That music controls how long Link is frozen in place, so removing it saves time.
-This is bad when speedrunning the game, since ideally the music removal should not
-save any time. So this address is exempted from the search & replace operation above.
+It would be more clever to make one small change to the code that runs on the
+SPC, but I struggled to figure out that code, and making this data change was
+not too difficult. The music editor in Hyrule Magic was very helpful for
+figuring out what to change.
+
+In the 0.1 version of this project, it worked by a completely different
+mechanism: the main SNES CPU was prevented from sending "start new song"
+messages to the SPC. This had a major problem in that it saved several seconds
+every time you picked up a crystal, because the length of the crystal pickup
+song defined how long you were frozen in place holding the crystal.
+
+The current version does not have this crystal timing defect, nor any other
+problems that I know of.
+
