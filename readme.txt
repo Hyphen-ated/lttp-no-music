@@ -1,12 +1,17 @@
 By Hyphen-ated
 version 0.2
 
-This is a patch to remove music from the 1.0 japanese version of Zelda LTTP.
-It's compatible with the randomizer at http://vt.alttp.run/
+This is a patch to remove music from The Legend of Zelda: A Link to the Past.
+It was developed for the Japanese 1.0 version, and has also been tested to 
+work on the USA version.
 
-How to use: get a randomized rom, then use the program "Lunar IPS" (or another
-IPS patcher of your choice) to apply this .ips file to the rom. Then when you
-play the rom, it will have no music.
+This patch was added to the randomizer at https://alttpr.com/, so
+if you're playing rando, you can just use the option there for no music;
+you don't need to apply this patch yourself.
+
+How to use: apply the .ips file to your rom using the program "Lunar IPS"
+(or another IPS patcher of your choice). Then when you play, there will be
+no music.
 
 It works by editing the song data files that are interpreted by the SPC700
 sound coprocessor. Wherever there is a "volume" (ED byte) or "volume ramp" (EE
