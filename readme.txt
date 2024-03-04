@@ -3,7 +3,8 @@ version 0.2
 
 This is a patch to remove music from The Legend of Zelda: A Link to the Past.
 It was developed for the Japanese 1.0 version, and has also been tested to 
-work on the USA version.
+work on the USA version. The CRC32 checksum of the base ROM should be 3322EFFC
+or 777AAC2F.
 
 This patch was added to the randomizer at https://alttpr.com/, so
 if you're playing rando, you can just use the option there for no music;
